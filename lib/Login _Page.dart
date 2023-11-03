@@ -1,94 +1,4 @@
 
-// import 'package:e_commerce_website/signUpPage.dart';
-// import 'package:flutter/material.dart';
-
-// class LoginPage extends StatelessWidget {
-//   const LoginPage({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: "E-Commerce Website",
-//       debugShowCheckedModeBanner: false,
-//       home: Scaffold(
-      
-//       body:Container(
-//         padding: EdgeInsets.all(23),
-//         width: double.infinity,
-//         height: double.infinity,
-//         child: Card(
-//           borderOnForeground: true,
-//           child: Column(
-//             mainAxisAlignment: MainAxisAlignment.start,
-//             children: [
-
-//               SizedBox(height: 60,),
-//               Text("Fashions",textDirection: TextDirection.ltr,textAlign: TextAlign.left,style: TextStyle(fontSize:20,color:Colors.black ),),
-//               Text("My Life My Style",textDirection: TextDirection.ltr,style: TextStyle(fontSize:18,color:Colors.grey ),),
-//               SizedBox(height: 70,),
-//               Text("Welcome!",textDirection: TextDirection.ltr,style: TextStyle(fontSize:20,color:Colors.black ),),
-//               Text("please Login or sign up to continue our app",textDirection: TextDirection.ltr,style: TextStyle(fontSize:11,color:Colors.grey ),),
-//                SizedBox(height: 45,),
-//               Text("Email",textDirection: TextDirection.ltr,style: TextStyle(fontSize:20,color:Colors.black ),),
-//               Padding(
-//                 padding: EdgeInsets.all(8),
-//                 child: TextField()),
-//                 SizedBox(height: 10,),
-//               Text("Password",textDirection: TextDirection.ltr,style: TextStyle(fontSize:20,color:Colors.black ),),
-//               Padding(
-//                 padding: EdgeInsets.all(8),
-//                 child: TextField()),
-//                 SizedBox(height: 25,),
-//                 ElevatedButton(onPressed: (){
-//                   Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpPage()));
-//                 },
-                
-//                  child: Text("login"),
-//                  ),
-
-//                  SizedBox(height: 10,),
-
-//                  Text("or",textDirection: TextDirection.ltr,style: TextStyle(fontSize:20,color:Colors.black ),),
-//                  SizedBox(height: 8,),
-//                 ElevatedButton(onPressed: (){
-//                   Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpPage()));
-//                 }, 
-//                 child: ListTile(
-//                   leading:Icon(Icons.facebook,color: Color.fromARGB(255, 17, 121, 206),),
-//                   title: Text("Continue with facebook"),
-                  
-//                 ),
-//                  ),
-//                  SizedBox(height: 12,),
-//                  ElevatedButton(onPressed: (){
-//                   Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpPage()));
-//                 }, 
-//                 child: ListTile(
-//                   leading:Icon(Icons.g_mobiledata,color: Colors.black,),
-//                   title: Text("Continue with facebook"),
-                  
-//                 ),
-//                  ),
-//                  SizedBox(height: 12,),
-//                  ElevatedButton(onPressed: (){
-//                   Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpPage()));
-//                 }, 
-//                 child: ListTile(
-//                   leading:Icon(Icons.apple,color: Colors.black,),
-//                   title: Text("Continue with facebook"),
-                  
-//                 ),
-//                  ) 
-//             ],
-//           ),
-//         ),
-//       ),),
-//     );
-//   }
-// }
-
-
-
 import 'package:e_commerce_website/successfull_message.dart';
 import 'package:flutter/material.dart';
 
@@ -125,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                         fontFamily: "Gilroy-Medium",
                         fontSize: 15,
                         color: Colors.black,
-                        fontWeight: FontWeight.w400),
+                        fontWeight: FontWeight.bold),
                   )),
               SizedBox(height: 30,),
               Container(
@@ -134,6 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                     "Welcome!",
                     style: TextStyle(
                       fontFamily: "Gilroy-Black",
+                      fontWeight: FontWeight.bold,
                       fontSize: 20,
                     ),
                   )),
@@ -154,16 +65,19 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(
                       fontFamily: "Gilroy-Bold",
                       fontSize: 17,
+                      fontWeight: FontWeight.bold,
                     ),
                   )),
               Container(
+                margin: EdgeInsets.all(8),
                 height: 30,
                 child: const TextField(
                   // textAlign: TextAlign.start,
                   cursorColor: Colors.black,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(right: 50,bottom: 21),
-                    hintText: "your email address",
+                    hintText: "Email Address",
+                    prefixIcon: Icon(Icons.email_outlined,color: Colors.black,),
                     focusedBorder:UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.black)
                     ),
@@ -181,9 +95,11 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(
                       fontFamily: "Gilroy-Bold",
                       fontSize: 17,
+                      fontWeight: FontWeight.bold,
                     ),
                   )),
               Container(
+                margin: EdgeInsets.all(8),
                 height: 30,
                 child: const TextField(
                   obscureText: true,
@@ -191,7 +107,8 @@ class _LoginPageState extends State<LoginPage> {
                   cursorColor: Colors.black,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(right: 50,bottom: 21),
-                    hintText: "your password",
+                    hintText: "Password",
+                    prefixIcon: Icon(Icons.lock,color: Colors.black,),
                     focusedBorder:UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.black)
                     ),
@@ -203,6 +120,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height: 40,),
               Container(
+                margin: EdgeInsets.all(6),
                 padding: EdgeInsets.only(bottom: 15),
                 child: SizedBox(
                   height: 40,
@@ -280,6 +198,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
+              SizedBox(height: 40,),
             ],
           ),
         ),

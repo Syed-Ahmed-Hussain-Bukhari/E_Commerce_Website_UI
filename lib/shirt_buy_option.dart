@@ -1,7 +1,5 @@
 
 
-
-
 import 'package:e_commerce_website/cart_page.dart';
 import 'package:e_commerce_website/homepage.dart';
 import 'package:flutter/material.dart';
@@ -52,12 +50,12 @@ class _AddToCartShirtPageState extends State<AddToCartShirtPage> {
                   SizedBox(
                     width: double.infinity,
                     height: 230,
-                    child:Image(image: AssetImage("assets/images/OIP.jpg")),
+                    child:Image(image: AssetImage("assets/images/OIP.jpg",),fit:BoxFit.fill),
                   ),
                   SizedBox(height: 12,),
 
                   Container(
-                    padding: EdgeInsets.all(8),
+                    padding: EdgeInsets.all(12),
                     width: double.infinity,
                     height: 550,
                     child: Card(
@@ -65,38 +63,52 @@ class _AddToCartShirtPageState extends State<AddToCartShirtPage> {
                       elevation: 30,
                       child: Column(
                         children: [
-                          Row(children: [
-                                 Text("Axel Arigato",style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold,)),
-                                 SizedBox(width:150,),
-                                  Container(
-                                    margin: EdgeInsets.all(4),
-                                    padding: EdgeInsets.all(5),
-                                    color: Colors.grey,
-                                    child:Text("- 1 +",style: TextStyle(fontSize: 23,color: Colors.black)),
-                                  )  
-                                        
-                          ],),
-                          Row(children: [
-                                 Text(" Clean 90 Triole Sneakers",style: TextStyle(fontSize: 17,color: Colors.grey)),
-                                 SizedBox(width:15,),
-                                  Container(
-                                    margin: EdgeInsets.all(4),
-                                    padding: EdgeInsets.all(5),
-                                    child:Text("Available in Stok",style: TextStyle(fontSize: 18,color: Colors.black)),
+                          Container(
+                            padding: EdgeInsets.all(12),
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                     Text("Axel Arigato",style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold,)),
+                                     SizedBox(width:150,),
+                                      Container(
+                                        margin: EdgeInsets.all(4),
+                                        padding: EdgeInsets.all(5),
+                                        color: Colors.grey,
+                                        child:Text("- 1 +",style: TextStyle(fontSize: 23,color: Colors.black)),
+                                      )  
+                                            
+                              ],),
+                            ),
+                          ),
+                          Container(
+                          padding: EdgeInsets.all(8),
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                     Text(" Clean 90 Triole Sneakers",style: TextStyle(fontSize: 17,color: Colors.grey)),
+                                     SizedBox(width: 8,),
                                     
-                                  )
-                                  
-                          ],),
+                                       Text("Available in Stock",style: TextStyle(fontSize: 18,color: Colors.black)),
+                              ],),
+                            ),
+                          ),
 
-                          Row(children: [
-                            Icon(Icons.star,color: Colors.amber,),
-                            Icon(Icons.star,color: Colors.amber,),
-                            Icon(Icons.star,color: Colors.amber,),
-                            Icon(Icons.star,color: Colors.amber,),
-                            Icon(Icons.star,color: Colors.amber,),
-                            Text("  (270 Review)",style: TextStyle(fontSize: 17,color: Colors.grey)),
-                               
-                          ],),
+                          Container(
+                            padding: EdgeInsets.only(left: 12),
+                            child: Row(children: [
+                              Icon(Icons.star,color: Colors.amber,),
+                              Icon(Icons.star,color: Colors.amber,),
+                              Icon(Icons.star,color: Colors.amber,),
+                              Icon(Icons.star,color: Colors.amber,),
+                              Icon(Icons.star,color: Colors.amber,),
+                              Text("  (270 Review)",style: TextStyle(fontSize: 17,color: Colors.grey)),
+                                 
+                            ],),
+                          ),
                           SizedBox(height: 30,),
                           Row(
                             children: [
@@ -154,22 +166,25 @@ class _AddToCartShirtPageState extends State<AddToCartShirtPage> {
                             ],
                           ) ,
 
-                          Row(
-                            children: [
-                                Container(
-                                  padding: EdgeInsets.all(4),
-                                  child: Text("""Engineered to crush any movement-
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                  Container(
+                                    padding: EdgeInsets.all(12),
+                                    child: Text("""Engineered to crush any movement-
 based workout,these on sneakers enhance 
 the label's original cloud sneaker 
 with cutting edge technologies for a pair.""",style: TextStyle(fontSize: 18,color: Colors.grey,))),
-                                      
-                            ],
+                                        
+                              ],
+                            ),
                           ) ,
 
                         SizedBox(height: 30,),
                         ListTile(
                           title: Text("Total Price"),
-                          subtitle: Text("195.00 Rs",style: TextStyle(fontSize: 18,color: Colors.black,fontWeight: FontWeight.bold),
+                          subtitle: Text("\$195.00",style: TextStyle(fontSize: 18,color: Colors.black,fontWeight: FontWeight.bold),
                                       ),
                           trailing:ElevatedButton(
                             

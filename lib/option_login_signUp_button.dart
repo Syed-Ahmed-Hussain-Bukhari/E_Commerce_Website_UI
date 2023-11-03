@@ -26,46 +26,49 @@ class _OptionLoginSignUpButtonState extends State<OptionLoginSignUpButton> {
           decoration: BoxDecoration(
             image:DecorationImage(image: AssetImage("assets/images/black-friday-elements-assortment.jpg"),fit:BoxFit.fill)
           ),
-          child: Column(
-            children: [
-              SizedBox(height: 340,),
-               Container(
-                padding: EdgeInsets.all(23),
-                width: double.infinity,
-                 child: ElevatedButton(
-                      onPressed: (){
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage()));
-                      },
-                      child: Text("Login",style: TextStyle(fontFamily: "Gilroy-Bold",fontSize: 15,color: Colors.white,),
+          child: SingleChildScrollView(
+            child: Column(
+             crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height:MediaQuery.of(context).size.height*0.4,),
+                 Container(
+                  padding: EdgeInsets.all(23),
+                  width: MediaQuery.of(context).size.width*0.6,
+                   child: ElevatedButton(
+                        onPressed: (){
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                        },
+                        child: Text("Login",style: TextStyle(fontFamily: "Gilroy-Bold",fontSize: 15,color: Colors.white,),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          shape: StadiumBorder(),
+                          backgroundColor: Colors.black,
+                        ),  
                       ),
-                      style: ElevatedButton.styleFrom(
-                        shape: StadiumBorder(),
-                        backgroundColor: Colors.black,
-                      ),  
-                    ),
-               ),
-                  
-                  SizedBox(height: 70,),
-                  
-                   Container(
-                    padding: EdgeInsets.all(23),
-                    width: double.infinity,
-                     child: ElevatedButton(
-                      onPressed: (){
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SignUpPage()));
-                      },
-                      child: Text("Sign Up",style: TextStyle(fontFamily: "Gilroy-Bold",fontSize: 15,color: Colors.white,),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        shape: StadiumBorder(),
-                        backgroundColor: Colors.black,
-                      ),  
-                                     ),
-                   ),
-            ],
+                 ),
+                    
+                    SizedBox(height:MediaQuery.of(context).size.height*0.02,),
+                    
+                     Container(
+                      padding: EdgeInsets.all(23),
+                      width: MediaQuery.of(context).size.width*0.6,
+                       child: ElevatedButton(
+                        onPressed: (){
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SignUpPage()));
+                        },
+                        child: Text("Sign Up",style: TextStyle(fontFamily: "Gilroy-Bold",fontSize: 15,color: Colors.white,),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          shape: StadiumBorder(),
+                          backgroundColor: Colors.black,
+                        ),  
+                                       ),
+                     ),
+              ],
+            ),
           )
         ),
       ),
-    );;
+    );
   }
 }

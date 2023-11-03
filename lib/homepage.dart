@@ -90,55 +90,71 @@ class _HomePageState extends State<HomePage> {
               home: Scaffold(
                 backgroundColor: Colors.white,
                 body: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
+                  // scrollDirection: Axis.horizontal,
                   child: Column(children: [
                     SizedBox(height: 35,),
-                    Row(
-                      children: [
-                        SizedBox(width: 26,),
-                        CircleAvatar(
-                          radius:20,backgroundColor: Colors.black,
-                          child: IconButton(onPressed: (){}, icon: Icon(Icons.menu,color: Colors.white,))),
-                        SizedBox(width: 220,),
-                        IconButton(onPressed: (){}, icon: Icon(Icons.search,color: Colors.black,size: 40,)),
-                      ],
+                    Container(
+                      padding: EdgeInsets.only(left: 12,right: 12),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          // SizedBox(width: 26,),
+                          CircleAvatar(
+                            radius:20,backgroundColor: Colors.black,
+                            child: IconButton(onPressed: (){}, icon: Icon(Icons.menu,color: Colors.white,))),
+                          // SizedBox(width: 220,),
+                          IconButton(onPressed: (){}, icon: Icon(Icons.search,color: Colors.black,size: 40,)),
+                        ],
+                      ),
                     ),
                     SizedBox(height: 24,),
                     Padding(
                       padding: EdgeInsets.all(8),
-                      child: Row(
-                        children: [
-                          SizedBox(width: 20,),
-
-                          InkWell(
-                            onTap: (){
-                               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>AddToCartMobilePage()));
-             
-                               
-                            },
-                            child: SizedBox(
-                            height: 200,
-                            width: 320,
-                            child: Card(
-                              child:Image(image: AssetImage("assets/images/sales.png"),fit:BoxFit.cover) ,
-                              shadowColor: Colors.black,
-                              elevation: 50,
-                            ),),
-                          ),
-                     ],
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            SizedBox(width: 20,),
+                      
+                            Container(
+                              child: InkWell(
+                              
+                                onTap: (){
+                                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>AddToCartMobilePage()));
+                                         
+                                   
+                                },
+                                child: SizedBox(
+                                height: 200,
+                                width: 320,
+                                child: Card(
+                                
+                                  child:Image(image: AssetImage("assets/images/sales.png"),fit:BoxFit.cover,width: double.infinity,) ,
+                                  shadowColor: Colors.black,
+                                  elevation: 50,
+                                ),),
+                              ),
+                            ),
+                                           ],
+                        ),
                       )),
                       SizedBox(height: 19,),
-                      Row(children: [
-                          SizedBox(width: 26,),
-                          Text("New Arrivals",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),),
-                           SizedBox(width: 140,),
-                           Text("View All",style: TextStyle(fontSize: 20,color: Colors.grey),)
-                      ],),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(children: [
+                            SizedBox(width: 26,),
+                            Text("New Arrivals",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),),
+                             SizedBox(width: 140,),
+                             Text("View All",style: TextStyle(fontSize: 20,color: Colors.grey),)
+                        ],),
+                      ),
 
                       SizedBox(height: 20,),
                       SingleChildScrollView(
-                        scrollDirection: Axis.vertical,
-                        child: Row(children: [
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
                           Padding(
                             padding: EdgeInsets.only(left: 8,right: 8),
                             child: InkWell(
@@ -175,30 +191,53 @@ class _HomePageState extends State<HomePage> {
                         ],),
                       ),
                       SizedBox(height: 20,),
-                      Row(children: [
-                        Text(" The Marc Jacobs",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w700),),
-                        SizedBox(width: 35,),
-                        Text("The Marc Jacobs",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w700),),
-                      ]),
-                      Row(children: [
-                        SizedBox(width: 18,),
-                        Text("Traveler Tote",style: TextStyle(fontSize: 15,color: Colors.black,fontWeight: FontWeight.w400),),
-                        SizedBox(width: 85,),
-                        Text("Clean 90 Triple Sneakers",style: TextStyle(fontSize: 15,color: Colors.black,fontWeight: FontWeight.w400),),
-                      ]),
-                      Row(children: [
-                        // SizedBox(width: 6,),
-                        Text("  195.00 Rs.",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w700),),
-                        SizedBox(width: 150,),
-                        Text("245.00 Rs.",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w700),),
-                      ]),
+                      Container(
+                        padding: EdgeInsets.only(left: 15,right: 15),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                            Text(" The Marc Jacobs",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w700),),
+                            SizedBox(width: 35,),
+                            Text("The Marc Jacobs",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w700),),
+                          ]),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                          // SizedBox(width: 18,),
+                          Text("Traveler Tote",style: TextStyle(fontSize: 15,color: Colors.black,fontWeight: FontWeight.w400),),
+                          // SizedBox(width: 85,),
+                          Text("Clean 90 Triple Sneakers",style: TextStyle(fontSize: 15,color: Colors.black,fontWeight: FontWeight.w400),),
+                        ]),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 15,right: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                          // SizedBox(width: 6,),
+                          Text("\$195.00",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w700),),
+                          // SizedBox(width: 150,),
+                          Text("\$245.00",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w700),),
+                        ]),
+                      ),
 
                       SizedBox(height: 20,),
-                      Row(children: [
-                        Text(" Popular",style: TextStyle(fontSize: 22,color: Colors.black,fontWeight: FontWeight.w700),),
-                        SizedBox(width: 200,),
-                        Text("View All",style: TextStyle(fontSize: 22,color: Colors.black,fontWeight: FontWeight.w700),),
-                      ]),
+                      Container(
+                        padding: EdgeInsets.only(right: 15,left: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                          Text(" Popular",style: TextStyle(fontSize: 22,color: Colors.black,fontWeight: FontWeight.w700),),
+                          // SizedBox(width: 200,),
+                          Text("View All",style: TextStyle(fontSize: 22,color: Colors.black,fontWeight: FontWeight.w700),),
+                        ]),
+                      ),
                       SizedBox(height: 12,),
                       SingleChildScrollView(
                         child: InkWell(
@@ -206,28 +245,33 @@ class _HomePageState extends State<HomePage> {
                             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>AddToCartsandlePage()));
              
                           },
-                          child: SizedBox(
-                            width: 330,
-                            height: 100,
-                            child: Card(
-                              shadowColor: Colors.black,
-                              elevation: 30,
-                              child: ListTile(leading: Card(
-                                child: CircleAvatar(
-                                  backgroundColor: Colors.white,
-                                  radius: 27,
-                                  child: Image(image: AssetImage("assets/images/OIP (1).jpg"),fit: BoxFit.cover,)
+                          child: Container(
+                            padding: EdgeInsets.only(right: 15,left: 15),
+                            child: SizedBox(
+                              width: double.infinity,
+                              height: 100,
+                              child: Card(
+                                shadowColor: Colors.black,
+                                elevation: 30,
+                                child: ListTile(leading: Card(
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.white,
+                                    radius: 27,
+                                    child: Image(image: AssetImage("assets/images/OIP (1).jpg"),fit: BoxFit.cover,width: double.infinity,)
+                                  ),
                                 ),
-                              ),
-                              title: Text("Gia Borghini",style: TextStyle(fontSize: 18,color: Colors.black,fontWeight: FontWeight.w700)),
-                              subtitle: Text("RWH Rosie 1 Sndals",style: TextStyle(fontSize: 16,color: Colors.black),),
-                              trailing: Text("740.00 RS.",style: TextStyle(fontSize: 14,color: Colors.black,fontWeight: FontWeight.w900)),
-                              
+                                title: Text("Gia Borghini",style: TextStyle(fontSize: 18,color: Colors.black,fontWeight: FontWeight.w700)),
+                                subtitle: Text("RWH Rosie 1 Sndals",style: TextStyle(fontSize: 16,color: Colors.black),),
+                                trailing: Text(" \$740.00.",style: TextStyle(fontSize: 14,color: Colors.black,fontWeight: FontWeight.w900)),
+                                
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
+
+                    SizedBox(height: 100,)
                   ],
                   ),
                 ),

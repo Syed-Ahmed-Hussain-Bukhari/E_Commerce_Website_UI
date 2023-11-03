@@ -99,39 +99,45 @@ class CartPage extends StatelessWidget {
             body: SingleChildScrollView(
               child: Column(children: [
                 SizedBox(height: 35,),
-                Padding(
-                  padding: EdgeInsets.all(15),
-                  child: Row(children: [
-                    SizedBox(width: 5,),
-                    Text("My Order",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),),
-                   SizedBox(width: 32,),
-                    ElevatedButton(
-                      onPressed: (){
-                        
-                      },
-                      child: Text("Ongoing",style: TextStyle(fontFamily: "Gilroy-Bold",fontSize: 17,color: Colors.grey,),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        shape: StadiumBorder(),
-                        backgroundColor: Colors.white,
-                      ),  
-                    ),
-                      SizedBox(width: 18,),
+                SingleChildScrollView(
+                  
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 20,left: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                      // SizedBox(width: 5,),
+                      Text("My Order",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),),
+                     SizedBox(width: 32,),
                       ElevatedButton(
-                      onPressed: (){
-                        
-                      },
-                      child: Text("complated",style: TextStyle(fontFamily: "Gilroy-Bold",fontSize: 17,color: Colors.white,fontWeight: FontWeight.w300),
+                        onPressed: (){
+                          
+                        },
+                        child: Text("Ongoing",style: TextStyle(fontFamily: "Gilroy-Bold",fontSize: 17,color: Colors.grey,),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          shape: StadiumBorder(),
+                          backgroundColor: Colors.white,
+                        ),  
                       ),
-                      style: ElevatedButton.styleFrom(
-                        shape: StadiumBorder(),
-                        backgroundColor: Colors.black,
-                      ))
-                  ],),
+                        SizedBox(width: 18,),
+                        ElevatedButton(
+                        onPressed: (){
+                          
+                        },
+                        child: Text("complated",style: TextStyle(fontFamily: "Gilroy-Bold",fontSize: 17,color: Colors.white,fontWeight: FontWeight.w300),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          shape: StadiumBorder(),
+                          backgroundColor: Colors.black,
+                        ))
+                    ],),
+                  ),
                 ),
                 SizedBox(height: 50,),
                 
                 Container(
+                  width: double.infinity,
                 child: Card(
                   shadowColor: Colors.black,
                   elevation: 30,
@@ -145,7 +151,7 @@ Quality:1
 Size:42
 Color:brown
                       """,style: TextStyle(fontSize:17,color: Colors.grey),),
-                      trailing: Text("120.00 Rs.",style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold,color: Colors.black),),
+                      trailing: Text("\$120.00",style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold,color: Colors.black),),
                      ),
                 ),
                     
@@ -165,7 +171,7 @@ Quality:1
 Size:42
 Color:brown
                       """,style: TextStyle(fontSize:17,color: Colors.grey),),
-                      trailing: Text("20,000.00 Rs.",style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold,color: Colors.black),),
+                      trailing: Text("\$2,000.00",style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold,color: Colors.black),),
                      ),
                 ),
                     
@@ -185,7 +191,7 @@ Quality:1
 Size:42
 Color:black
                       """,style: TextStyle(fontSize:17,color: Colors.grey),),
-                      trailing: Text("320.00 Rs.",style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold,color: Colors.black),),
+                      trailing: Text("\$320.00",style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold,color: Colors.black),),
                      ),
                 ),
                     

@@ -28,11 +28,12 @@ class SucessFulRegistered extends StatelessWidget {
                   SizedBox(height: 8,),
                   Text("You have Sucessfully registered in",textAlign: TextAlign.center,style: TextStyle(fontSize: 18,color: Colors.grey,),),
                   Text("our app start working in it.",textAlign: TextAlign.center,style: TextStyle(fontSize: 18,color: Colors.grey,),),
-                 SizedBox(height: 180,),
+                 SizedBox(height: MediaQuery.of(context).size.height*0.1,),
                  Container(
                   padding: EdgeInsets.all(20),
                   width: double.infinity,
-                   child: ElevatedButton(onPressed: (){
+
+                  child: ElevatedButton(onPressed: (){
 
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomNaviagtionBarPage()));
                              
@@ -44,6 +45,7 @@ class SucessFulRegistered extends StatelessWidget {
                   ), 
                   ),
                  ),
+                 SizedBox(height: 70,)
                            
                 ],
                     
